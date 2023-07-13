@@ -1,3 +1,14 @@
+
+/// Calculates the median of a vector of f32 values.
+///
+/// # Arguments
+///
+/// * `a` - A vector of f32 values.
+///
+/// # Returns
+///
+/// * `Option<f32>` - The median value of the vector, or None if the vector is empty.
+///
 fn median(a: Vec<f32>) -> Option<f32> {
     if a.len() == 0 {
         return None;
