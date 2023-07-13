@@ -1,9 +1,21 @@
 fn median(a: Vec<f32>) -> Option<f32> {
-    todo!();
+    if a.len() == 0 {
+        return None;
+    }
+
+    let mut sorted = a.clone();
+    sorted.sort_by(|a, b| a.partial_cmp(b).unwrap());
+
+    let mid = sorted.len() / 2;
+    if sorted.len() % 2 == 0 {
+        Some((sorted[mid - 1] + sorted[mid]) / 2.0)
+    } else {
+        Some(sorted[mid])
+    }
 }
 
 fn main() {
-    let answer = median(vec![1.0, 2.0, 5.0]);
+    let answer = median(vec![1.0, 2.0, 5.0, 6.0]);
 
     println!("median([1,2,5]) = {:?}", answer);
 }
